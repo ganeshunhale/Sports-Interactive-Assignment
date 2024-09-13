@@ -15,7 +15,7 @@ app.post('/AddCountry', upload.single('flag'), addCountry);
 app.get('/countries/:id', getSingleCoutry)
 
 
-var server = app.listen(8080,function(){
+var server = app.listen(process.env.PORT || 8080,function(){
     var host = server.address().address
     var port = server.address().port
     console.log("REST API demo app listening at http://%s:%s", host, port)
