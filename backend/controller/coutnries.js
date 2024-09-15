@@ -1,4 +1,4 @@
-
+ 
 var path = require('path');
 const fs = require("fs")
 
@@ -67,7 +67,7 @@ const getSingleCoutry = (req, res) => {
     if (!singleCountry) {
         return res.status(404).send('Country not found');
     }
-    singleCountry.flag = `http://localhost:8080/images/${path.basename(singleCountry.flag)}`; 
+    singleCountry.flag = `https://sports-interactive-assignment.onrender.com/images/${path.basename(singleCountry.flag)}`; 
        res.end(JSON.stringify(singleCountry));
     });
  }
