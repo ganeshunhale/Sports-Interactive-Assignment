@@ -67,7 +67,9 @@ const getSingleCoutry = (req, res) => {
     if (!singleCountry) {
         return res.status(404).send('Country not found');
     }
-    singleCountry.flag = `https://sports-interactive-assignment.onrender.com/images/${path.basename(singleCountry.flag)}`; 
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    // singleCountry.flag = `https://sports-interactive-assignment.onrender.com/images/${path.basename(singleCountry.flag)}`; 
+    singleCountry.flag = `${baseUrl}/images/${path.basename(singleCountry.flag)}`;
        res.end(JSON.stringify(singleCountry));
     });
  }
